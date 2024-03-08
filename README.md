@@ -2,7 +2,7 @@
 <br>
 
 ## Overview
-In this project explain on implement Redis cache in a Product spring boot application. 
+The main objective of this project is to optimize performance by integrating Redis caching into this project.This is achieved through the creation of a custom annotation called @LogExecutionTime, which is designed to work seamlessly with Spring AOP. By annotating methods with @LogExecutionTime, we can accurately measure the execution time of these methods both before and after utilizing Redis cache to fetch data from the database. This provides valuable insights into the efficiency gains achieved through caching, allowing us to assess the impact of caching on method execution times. 
  <br>
  
 ## Usages
@@ -14,11 +14,11 @@ In this project explain on implement Redis cache in a Product spring boot applic
 ## Architecture of the Project
 
  ### 1- src folders
-   - Controllers 
-   - Models 
+   - Controller
+   - Model 
    - Aspect
-   - Services 
-   - Repositories 
+   - Service
+   - Repository
  
  ### 2-Maven pom.xml
 <br>
@@ -76,3 +76,5 @@ spring.datasource.password=nFLhPPKOnkW1FA1e
 spring.jpa.show-sql=true
 
  ```
+
+
