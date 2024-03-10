@@ -149,9 +149,7 @@ public void deleteById(long id) {
  repository.deleteById(id);
     }
 ```
-##### :pencil2: As you can see the time taken when I invovic the specific product id from database as 1800ms . While, when I invovic ed it again but this time it going fetch it from cache as 16ms. 
-
-if you notic the last line when I invoviced  it once another time  the excutation time will be less as 8ms.
+##### :pencil2: As you can see the time taken when I invovic the specific product id from database as 1800ms. While, when I invoviced it again but this time it going fetch it from cache as 16ms. If you notic the last line when I invoviced  it once another time  the excutation time will be less as 8ms.
 ###### Result :star_struck:
 
 <br>
