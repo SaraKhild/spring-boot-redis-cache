@@ -116,7 +116,7 @@ public class SpringDataWithRedisApplication {
 	}
    }
 ```
-##### :pencil2: @Cacheable is used to bring data from database and storing it in the cache. In future, the method retrives data from the cache value directly.<br>The value attribute establishes a cache with a specific name and the key is a unique identifier that represents a specific piece of cached data. Accordingly, the method result is stored in the "product" cache, where respective "id" of product as the unique key.
+##### :pencil2: @Cacheable is used to bring data from database and storing it in the cache. In future, the method retrives data from the cache value directly.The value attribute establishes a cache with a specific name and the key is a unique identifier that represents a specific piece of cached data. Accordingly, the method result is stored in the "product" cache, where respective "id" of product as the unique key.
 ###### Code :computer: 
 ```
 @Cacheable(key = "#id", value = "product")
