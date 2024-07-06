@@ -41,11 +41,11 @@ public class ProductController {
        return service.save(model);
     }
 
-    @LogExecutionTime
-    @DeleteMapping("{id}")
-    public void deleteById(@PathVariable long id) {
-        service.deleteById(id);
-    }
+  //  @LogExecutionTime
+    // @DeleteMapping("{id}")
+    // public void deleteById(@PathVariable long id) {
+    //     service.deleteById(id);
+    // }
 
     @LogExecutionTime
     @PutMapping("{id}")

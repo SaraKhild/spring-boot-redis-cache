@@ -30,13 +30,14 @@ public class ProductService {
         return repository.findById(id).get();
     }
 
+    @LogExecutionTime
     @CachePut(key = "#result.id", value = "product")
     public Product save(Product model) {
       return repository.save(model);
       
     }
 
-    // @CachePut(key = "#id", cacheNames = "product")
+    // @CachePut(key = "#id", cacheNames = "product")   
     @Caching(evict = { @CacheEvict(value = "evictProduct", allEntries = true) }, put = {
             @CachePut(key = "#id", value = "product") })
     public Product update(Product model, long id) {
@@ -52,9 +53,5 @@ public class ProductService {
         return product;
     }
 
-    @CacheEvict(key = "#id", cacheNames = "product")
-    public void deleteById(long id) {
-        repository.deleteById(id);
-
-    }
+    
 }
