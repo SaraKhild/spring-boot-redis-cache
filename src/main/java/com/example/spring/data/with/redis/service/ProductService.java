@@ -25,19 +25,20 @@ public class ProductService {
     }
 
     @LogExecutionTime
-    @Cacheable(key = "#id", value = "product")
+    @Cacheable(key = "#id", value = "product", 
+              unless = "#result == null", condition = "#id > 0")
     public Product getById(long id) {
-        return repository.findById(id).get();
+        return repository.findById(id).orElseThrow(()-> new RuntimeException("The product not found"));
     }
 
     @LogExecutionTime
     @CachePut(key = "#result.id", value = "product")
     public Product save(Product model) {
-      return repository.save(model);
-      
+        return repository.save(model);
+
     }
 
-    // @CachePut(key = "#id", cacheNames = "product")   
+    // @CachePut(key = "#id", cacheNames = "product")
     @Caching(evict = { @CacheEvict(value = "evictProduct", allEntries = true) }, put = {
             @CachePut(key = "#id", value = "product") })
     public Product update(Product model, long id) {
@@ -53,5 +54,4 @@ public class ProductService {
         return product;
     }
 
-    
 }
